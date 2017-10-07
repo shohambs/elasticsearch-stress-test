@@ -155,7 +155,7 @@ def generate_random_int(max_size):
 
 # Generate a random string with length of 1 to provided param
 def generate_random_string(max_size):
-    return ''.join(choice(string.ascii_lowercase) for _ in range(generate_random_int(max_size)))
+    return ''.join(choice(string.ascii_lowercase) for _ in range(max_size))
 
 
 # Create a document template
@@ -163,7 +163,7 @@ def generate_document():
     temp_doc = {}
 
     # Iterate over the max fields
-    for _ in range(generate_random_int(MAX_FIELDS_PER_DOCUMENT)):
+    for _ in range(MAX_FIELDS_PER_DOCUMENT):
         # Generate a field, with random content
         temp_doc[generate_random_string(10)] = generate_random_string(MAX_SIZE_PER_FIELD)
 
